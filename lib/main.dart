@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'HomeScreen.dart';
 import 'SplashScreen.dart';
 
 void main() {
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
         initialRoute: Splashscreen.routeName,
         routes: {
           Splashscreen.routeName: (context)=>Splashscreen(),
+          Homescreen.routeName:(context) => Homescreen()
 
         }
     );

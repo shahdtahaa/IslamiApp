@@ -43,7 +43,7 @@ class _HomescreenState extends State<Homescreen> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(top: 100),
-                    child: Center(child: Image.asset('assets/images/moshaf photo.png')),
+                    child: Center(child: Image.asset('assets/images/Moshaf_photo.png')),
                   )
                 ],
               )
@@ -78,7 +78,7 @@ class _HomescreenState extends State<Homescreen> {
                   ,backgroundColor: Color(0xffB7935F),
                   label: 'quran'),
 
-              BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/moshaf Stand.png'),size: 35,)
+              BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/moshaf.png'),size: 35,)
                   ,backgroundColor: Color(0xffB7935F),
                   label: 'moshaf'),
 
