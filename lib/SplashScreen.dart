@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'Home/HomeScreen.dart';
+
 
 class Splashscreen extends StatefulWidget {
   static const String routeName ='splashScreen';
@@ -14,7 +16,7 @@ class _SplashscreenState extends State<Splashscreen> {
     Future.delayed(Duration(seconds: 6),
             (){
 
-
+              Navigator.pushReplacementNamed(context, Homescreen.routeName);
         }
     );
   }
