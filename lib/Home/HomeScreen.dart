@@ -1,6 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:islami_application/Home/tabs/ahadeth.dart';
+import 'package:islami_application/Home/tabs/quran.dart';
+import 'package:islami_application/Home/tabs/radio.dart';
+import 'package:islami_application/Home/tabs/sebha.dart';
+import 'package:islami_application/Home/tabs/settings.dart';
 
 class Homescreen extends StatefulWidget {
   static const String routeName = 'Home Screen';
@@ -15,41 +20,21 @@ class _HomescreenState extends State<Homescreen> {
 
     @override
     Widget build(BuildContext context) {
-      return Scaffold(
-        extendBodyBehindAppBar: true,
-        appBar: AppBar(
-          title: Center(
-            child: Text('إسلامي',
-              style: GoogleFonts.elMessiri(
-                  fontWeight: FontWeight.w700,
-                  fontSize: 30
-              ),
+      return Stack(
+        children: [
+          Image.asset('assets/images/background.png'),
+          Scaffold(
+            backgroundColor: Colors.transparent,
+            appBar: AppBar(backgroundColor: Colors.transparent,
+            centerTitle: true,
+            title: Text('إسلامي', style: GoogleFonts.elMessiri(
+              fontWeight: FontWeight.w700,
+              fontSize: 30,
+              height: 46.89
             ),
-          ),
-          backgroundColor: Colors.transparent,
-        ),
-        body: Stack(
-
-            children: [
-              Container(
-                height: double.infinity,
-                width: double.infinity,
-                child: Image.asset('assets/images/background.png',
-                  fit: BoxFit.fill,),
+            )
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start
-                ,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 100),
-                    child: Center(child: Image.asset('assets/images/Moshaf_photo.png')),
-                  )
-                ],
-              )
-            ]
-        ),
-        bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar: BottomNavigationBar(
             currentIndex: selectedindex,
             onTap: (index){
               selectedindex=index;
@@ -87,8 +72,18 @@ class _HomescreenState extends State<Homescreen> {
                   label: 'moshaf'),
 
             ]),
-
+            body: tabs[selectedindex],
+          )
+        ],
       );
 
+
   }
+  List<Widget> tabs=[
+    RadioTab(),
+    SebhaTab(),
+    AhadethTab(),
+    QuranTab(),
+    SettingsTab()
+  ];
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'Home/HomeScreen.dart';
 
-import 'HomeScreen.dart';
 
 class Splashscreen extends StatefulWidget {
   static const String routeName ='splashScreen';
