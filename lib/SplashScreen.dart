@@ -13,7 +13,8 @@ class _SplashscreenState extends State<Splashscreen> {
   void initState(){
     Future.delayed(Duration(seconds: 6),
             (){
-        //  Navigator.pushReplacementNamed(context, HomeScreen.routeName);
+
+
         }
     );
   }

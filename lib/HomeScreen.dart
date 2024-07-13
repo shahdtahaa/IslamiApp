@@ -55,6 +55,7 @@ class _HomescreenState extends State<Homescreen> {
               selectedindex=index;
               setState(() {
 
+
               });
 
             },
