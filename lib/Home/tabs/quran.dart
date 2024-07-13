@@ -257,7 +257,7 @@ class QuranTab extends StatelessWidget {
         Row(
           children: [
             Expanded(
-              child: Text('اسم السورة',
+              child: Text('عدد الآيات ',
                   style: GoogleFonts.elMessiri(
                       fontWeight: FontWeight.w600, fontSize: 25),
                   textAlign: TextAlign.center),
@@ -268,7 +268,7 @@ class QuranTab extends StatelessWidget {
               color: Color(0xFFB7935F),
             ),
             Expanded(
-              child: Text('عدد الآيات',
+              child: Text('اسم السورة',
                   style: GoogleFonts.elMessiri(
                       fontWeight: FontWeight.w600, fontSize: 25),
                   textAlign: TextAlign.center),
