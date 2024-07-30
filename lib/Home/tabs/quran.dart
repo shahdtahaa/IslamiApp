@@ -1,9 +1,11 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../SurahDetails.dart';
 import '../../SurahModel.dart';
+import '../../colors.dart';
 
 class QuranTab extends StatelessWidget {
   QuranTab({super.key});
@@ -124,13 +126,7 @@ class QuranTab extends StatelessWidget {
     "الناس"
   ];
   List<int> versesNumber = [
-    7,
-    286,
-    200,
-    176,
-    120,
-    165,
-    206,
+    7, 286, 200, 176, 120, 165, 206,
     75,
     129,
     109,
@@ -243,88 +239,76 @@ class QuranTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [
-        Center(
-            child: Image.asset(
-          'assets/images/Moshaf_photo.png',
-          width: 205,
-          height: 227,
-        )),
-        Divider(
-          thickness: 3,
-          color: Color(0xFFB7935F),
-        ),
-        Row(
-          children: [
-            Expanded(
-              child: Text('عدد الآيات ',
-                  style: GoogleFonts.elMessiri(
-                      fontWeight: FontWeight.w600, fontSize: 25),
-                  textAlign: TextAlign.center),
-            ),
-            Container(
-              width: 3,
-              height: 30,
-              color: Color(0xFFB7935F),
-            ),
-            Expanded(
-              child: Text('اسم السورة',
-                  style: GoogleFonts.elMessiri(
-                      fontWeight: FontWeight.w600, fontSize: 25),
-                  textAlign: TextAlign.center),
-            ),
-          ],
-        ),
-        Divider(
-          thickness: 3,
-          color: Color(0xFFB7935F),
-        ),
-        Expanded(
-            child: ListView.separated(
-          separatorBuilder: (context, index) {
-            return Divider(
-              color: Color(0xFFB7935F),
-              indent: 40,
-              endIndent: 40,
-            );
-          },
-          itemBuilder: (context, index) {
-            return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Text(
-                      versesNumber[index].toString(),
-                      style: GoogleFonts.elMessiri(
-                          fontSize: 20, fontWeight: FontWeight.w400),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                  Expanded(
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.pushNamed(context, Surahdetails.routeName,
-                        arguments: surahModel(suraNames[index], index));
-
-                      },
+        children: [
+          Center(
+              child: Image.asset(
+            'assets/images/Moshaf_photo.png',
+            width: 205,
+            height: 227,
+          )),
+          Divider(),
+          Row(
+            children: [
+              Expanded(
+                child: Text('versesnumber'.tr(),
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w600),
+                    textAlign: TextAlign.center),
+              ),
+              Container(
+                width: 3,
+                height: 30,
+                color: AppColors.primaryColor,
+              ),
+              Expanded(
+                child: Text('surahname'.tr(),
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w600),
+                    textAlign: TextAlign.center),
+              ),
+            ],
+          ),
+          Divider(
+          ),
+          Expanded(
+              child: ListView.separated(
+            separatorBuilder: (context, index) {
+              return Divider(
+                indent: 40,
+                endIndent: 40,
+              );
+            },
+            itemBuilder: (context, index) {
+              return Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: Row(
+                  children: [
+                    Expanded(
                       child: Text(
-                        suraNames[index],
-                        style: GoogleFonts.elMessiri(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w400,
-                        ),
+                        versesNumber[index].toString(),
+                        style: Theme.of(context).textTheme.bodySmall,
                         textAlign: TextAlign.center,
                       ),
                     ),
-                  ),
-                ],
-              ),
-            );
-          },
-          itemCount: suraNames.length,
-        ))
-      ],
-    );
+                    Expanded(
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, Surahdetails.routeName,
+                          arguments: surahModel(suraNames[index], index));
+
+                        },
+                        child: Text(
+                          suraNames[index],
+                          style: Theme.of(context).textTheme.bodySmall,
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
+            itemCount: suraNames.length,
+          ))
+        ],
+      );
   }
 }

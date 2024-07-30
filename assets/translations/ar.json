@@ -1,0 +1,14 @@
+{
+  "islami": "إسلامي",
+  "versesnumber": "عدد الآيات",
+  "surahname": "إسم السورة",
+  "ahadeth": "الأحاديث"
+,
+  "theme":"المظهر",
+  "light":"نهاري",
+  "dark":"ليلي",
+  "language":"اللغة",
+  "arabic":"عربي",
+  "english":"إنجليزي",
+  "praises":"عدد التسبيحات"
+}
